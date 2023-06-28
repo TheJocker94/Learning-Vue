@@ -31,8 +31,7 @@ const app = Vue.createApp({
             this.y = e.offsetY
         },
         handleFav(e){
-            console.log(e.type, this.books.isFav);
-            // this.books.isFav = !this.books.isFav
+            e.isFav = !e.isFav
         }
     }
 })

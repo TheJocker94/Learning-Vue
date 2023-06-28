@@ -20,7 +20,7 @@
             background: #fff;
             margin: 20px auto;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -41,7 +41,7 @@
         <br>
         <div v-if="showBooks">
             <ul>
-                <li v-for="book in books" :class="{fav: book.isFav}" @click="handleFav">
+                <li v-for="book in books" :class="{fav: book.isFav}" @click="handleFav(book)">
                     <img :src=book.img alt="book.title" style="height: 50px;">
                     <h3>{{book.title}}</h3>
                     <p>{{book.author}}</p>
