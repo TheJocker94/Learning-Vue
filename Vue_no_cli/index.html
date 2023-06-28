@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>hello, Vue :)</h1>
+    <div id="app">
+        <div v-if="showBooks">
+            <p>{{libbro}} - {{author}} - {{age}} </p>
+        </div>
+        <button @click="toggleShowBooks">
+			<span v-if="!showBooks">Show book</span>
+			<span v-else>Hide book</span>
+		</button>
+		<!-- mouse events -->
+		
+    </div>
+
+<!-- script vuejs app mount -->
+    <script src="app.js"></script>
+</body>
+</html>
