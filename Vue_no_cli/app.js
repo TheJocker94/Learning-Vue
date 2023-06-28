@@ -33,6 +33,11 @@ const app = Vue.createApp({
         handleFav(e){
             e.isFav = !e.isFav
         }
+    },
+    computed: {
+        filteredBooks(){
+            return this.books.filter((book) => book.isFav)
+        }
     }
 })
 
