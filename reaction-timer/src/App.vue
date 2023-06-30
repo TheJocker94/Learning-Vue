@@ -45,4 +45,18 @@ export default {
   color: #444;
   margin-top: 60px;
 }
+button{
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0faf87;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+button:disabled{
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
 </style>
