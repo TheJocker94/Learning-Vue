@@ -4,6 +4,7 @@
         <input type="email" required v-model="email">
         <label>Password</label>
         <input type="password" required v-model="password">
+        <div v-if="passwordError" class="error">{{ passwordError }}</div>
         <label>Role</label>
         <select v-model="role">
             <option value="developer">Web developer</option>
@@ -36,12 +37,12 @@
             <label>Pippo</label>
         </div> -->
     </form>
-    <p>Email: {{ email }}</p>
+    <!-- <p>Email: {{ email }}</p>
     <p>Password: {{ password }}</p>
     <p>Role: {{ role }}</p>
     <p>Terms: {{ terms }}</p>
     <p>tempSkill: {{ tempSkill }}</p>
-    <p>Skills: {{ skills }}</p>
+    <p>Skills: {{ skills }}</p> -->
     <!-- <p>Names: {{ names }}</p> -->
 </template>
 
@@ -57,7 +58,7 @@ export default {
             terms: false,
             tempSkill: [],
             skills: [],
-            errors: []
+            passwordError: ''
             // names: [],
         }
     },
@@ -74,8 +75,13 @@ export default {
             this.skills = this.skills.filter(s => s !== skill)
         },
         handleSubmit() {
-            console.log('handleSubmit');
             // TODO: validate form
+            // validate password
+            this.passwordError = this.password.length > 5 ?
+             '' : 'Password must be at least 6 characters long'
+             if (!this.passwordError){
+                console.log('form is valid');
+            }
         }
     }
 }
@@ -138,5 +144,11 @@ button{
 }
 .submit{
     text-align: center;
+}
+.error{
+    color: red;
+    font-size: 0.8em;
+    margin-top: 10px;
+    font-weight: bold;
 }
 </style>
