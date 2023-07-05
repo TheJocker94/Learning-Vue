@@ -6,7 +6,7 @@
       <PostList :posts="posts"/>
     </div>
     <div v-else>
-      <p>Loading posts ...</p>
+      <p v-if="!error">Loading posts ...</p>
     </div>
   </div>
 </template>
@@ -31,33 +31,20 @@
   -->
   <script>
 // @ is an alias to /src
-import { computed, ref, watch, watchEffect } from 'vue'
 import PostList from '@/components/PostList.vue';
+import getPosts from '@/composable/getPosts.js';
+
 export default {
     name: "Home",
     components: { PostList },
     setup() {
-        const posts = ref([]);
-        const error = ref(null);
-        const load = async() => {
-          try {
-            let data = await fetch('http://localhost:3000/posts')
-            if (!data.ok) {
-              throw Error('no data available')
-            }
-            posts.value = await data.json();
-          } catch (err) {
-            error.value = err.message;
-            console.log(error.value)
-          }
-        }
-        load();
+      const { posts, error, load} = getPosts();
+      load();
         return {
             posts,
             error
             
         };
-    },
-    components: { PostList }
+    }
 }
 </script>
