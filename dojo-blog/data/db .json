@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "title": "Hello World!",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, fuga, doloremque, voluptas, accusantium quia voluptatibus consequatur quibusdam quos doloribus voluptatum quod quidem ipsam! Quisquam, voluptatem, voluptas, quibusdam, quia voluptatibus quod quos quidem ipsam quae voluptatum doloremque doloribus consequatur accusantium quasi.",
+            "tags": [
+                "webdev",
+                "coding",
+                "news"
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Hello Planet!",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, fuga, doloremque, voluptas, accusantium quia voluptatibus consequatur quibusdam quos doloribus voluptatum quod quidem ipsam! Quisquam, voluptatem, voluptas, quibusdam, quia voluptatibus quod quos quidem ipsam quae voluptatum doloremque doloribus consequatur accusantium quasi.",
+            "tags": [
+                "css",
+                "webdev",
+                "coding"
+            ]
+        }
+    ]
+}
